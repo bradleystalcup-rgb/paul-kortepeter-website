@@ -2,7 +2,10 @@
 // Crypto's SubtleCrypto — the same API is available natively in Cloudflare
 // Workers and in Node 20+, so this file behaves identically in both places.
 
-const PBKDF2_ITERATIONS = 210_000;
+// Cloudflare Workers' PBKDF2 implementation caps iterations at 100,000
+// (Node's doesn't enforce this, so a higher value works locally but throws
+// in production) — 100,000 is the max allowed.
+const PBKDF2_ITERATIONS = 100_000;
 
 function toHex(buffer) {
   return [...new Uint8Array(buffer)].map((b) => b.toString(16).padStart(2, "0")).join("");
