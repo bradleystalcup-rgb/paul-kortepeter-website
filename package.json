@@ -1,0 +1,25 @@
+{
+  "name": "paul-kortepeter-website",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public",
+    "build:seed": "node seed/build-seed.mjs",
+    "hash-password": "node scripts/hash-password.mjs",
+    "db:migrate:local": "wrangler d1 execute paul-kortepeter-db --local --file=migrations/0001_init.sql",
+    "db:migrate:remote": "wrangler d1 execute paul-kortepeter-db --remote --file=migrations/0001_init.sql",
+    "db:seed:local": "wrangler d1 execute paul-kortepeter-db --local --file=seed/seed.sql",
+    "db:seed:remote": "wrangler d1 execute paul-kortepeter-db --remote --file=seed/seed.sql"
+  },
+  "dependencies": {
+    "hono": "^4.6.14",
+    "marked": "^13.0.3"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
