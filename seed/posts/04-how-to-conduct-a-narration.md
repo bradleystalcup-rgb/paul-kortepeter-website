@@ -6,6 +6,7 @@ date: 2025-05-01
 cover_image: /images/charlotte-mason.jpg
 source_note:
 published: true
+section: faq
 ---
 > "As knowledge is not assimilated until it is reproduced, children should 'tell back' after a single reading or hearing: or should write on some part of what they have read. A single reading is insisted on, because children have naturally great power of attention; but this force is dissipated by the re-reading of passages, and also, by too often questioning and summarizing."
 >

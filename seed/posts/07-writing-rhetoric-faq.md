@@ -5,7 +5,8 @@ excerpt: Common questions about the Writing & Rhetoric series — how it works, 
 date: 2025-04-01
 cover_image: /images/writing-rhetoric-series.webp
 source_note:
-published: false
+published: true
+section: faq
 ---
 ## How is Writing & Rhetoric different than traditional courses in composition?
 

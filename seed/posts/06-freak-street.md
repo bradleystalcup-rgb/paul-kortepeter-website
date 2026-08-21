@@ -1,11 +1,12 @@
 ---
-title: Hollywood Is a Horrifying Hellscape
-slug: hollywood-is-a-horrifying-hellscape
+title: Freak Street
+slug: freak-street
 excerpt: The Land of Make-Believe has been abandoned to its very real vices — a walk down Hollywood Boulevard on a Saturday night.
 date: 2022-07-23
 cover_image: /images/alley-scene.png
-source_note: Originally published in The American Spectator, July 23, 2022
+source_note: Originally published as "Hollywood Is a Horrifying Hellscape" in The American Spectator, July 23, 2022
 published: true
+section: blog
 ---
 As the corpse went past, the flies left the pizzeria in a cloud and rushed after it, but they came back a few minutes later.
 

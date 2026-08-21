@@ -5,7 +5,8 @@ excerpt: An ancient way of learning to write persists in every English class to 
 date: 2025-07-31
 cover_image: /images/writing-lesson-renoir.jpg
 source_note:
-published: false
+published: true
+section: blog
 ---
 Many ancient ideas are so brilliant, they persist to this day. Do you like movies? We are indebted to the ancient Greeks, who pioneered the foundational forms of drama. What about checkers or chess? You can thank the ancient Egyptians for coming up with senet, the granddaddy of all board games. And if you're grateful for indoor plumbing, as I certainly am, we must give credit to the Romans for their aqueducts and love for public baths. Coffeehouses? Arabia. Papermaking? China. Calculators? Sumer. Chocolate? Mexico. The progymnasmata? Wait. What? The progymnasmata?
 

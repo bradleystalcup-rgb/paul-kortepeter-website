@@ -12,6 +12,12 @@ export function adminEditorPage({ post, isNew, error }) {
     </div>
     ${error ? `<p class="form-error">${error}</p>` : ""}
     <form method="post" action="${action}" class="stack-form">
+      <label>Section
+        <select name="section">
+          <option value="blog" ${post.section === "blog" ? "selected" : ""}>Blog</option>
+          <option value="faq" ${post.section === "faq" ? "selected" : ""}>Writing &amp; Rhetoric FAQ</option>
+        </select>
+      </label>
       <label>Title
         <input type="text" name="title" value="${escapeHtml(post.title)}" required>
       </label>

@@ -6,6 +6,7 @@ date: 2025-10-16
 cover_image: /images/writing-lesson-anker.jpg
 source_note: Published in Classical Insights, October 16, 2025
 published: true
+section: blog
 ---
 In the winter of 2023, when ChatGPT hit schools like a meteorite, I instantly saw the threat to English composition. One of my best students, racing to meet a deadline, tried to pass off an AI-generated essay as her own. I quickly spotted that the essay wasn't hers. Its insipid tone and formulaic sentences betrayed her voice. Yet, in just two years, chatbots have roared ahead with turbo-charged power, far beyond their pioneer-buggy days. Now, I struggle to distinguish human from machine composition, especially when a student might prompt their favorite chatbot for "a few mistakes to sound like an eighth grader." These AI engines threaten not only to upend English composition but to erase human creativity itself. This isn't just my concern. This is coming from the creators and enablers of AI technology who foresee, often with dread, the abolition of man. And yet they can't seem to resist hastening us along to our end.
 

@@ -6,7 +6,6 @@ import { verifyPassword, signSession, verifySession } from "./crypto.js";
 import { homePage } from "./templates/home.js";
 import { blogListPage } from "./templates/blog-list.js";
 import { blogPostPage } from "./templates/blog-post.js";
-import { writingRhetoricFaqPage } from "./templates/writing-rhetoric-faq.js";
 import { booksPage } from "./templates/books.js";
 import { adminLoginPage } from "./templates/admin-login.js";
 import { adminDashboardPage } from "./templates/admin-dashboard.js";
@@ -15,32 +14,37 @@ import { adminEditorPage } from "./templates/admin-editor.js";
 const SESSION_COOKIE = "session";
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
+const SECTIONS = {
+  blog: { basePath: "/blog", title: "Blog", intro: "Essays on classical education, writing, and culture.", activeNav: "blog", backLabel: "all posts" },
+  faq: { basePath: "/writing-rhetoric-faq", title: "Writing & Rhetoric: FAQs", intro: "Common questions about the Writing & Rhetoric series and the classical progymnasmata.", activeNav: "", backLabel: "Writing & Rhetoric FAQs" },
+};
+
 export function createApp() {
   const app = new Hono();
 
   // ---- Public site -------------------------------------------------------
 
   app.get("/", async (c) => {
-    const posts = await listPosts(c.env.DB, { onlyPublished: true });
+    const posts = await listPosts(c.env.DB, { onlyPublished: true, section: "blog" });
     return c.html(homePage({ posts: posts.slice(0, 3) }));
   });
 
   app.get("/about", (c) => c.redirect("/#about"));
 
-  app.get("/writing-rhetoric-faq", (c) => c.html(writingRhetoricFaqPage()));
-
   app.get("/books", (c) => c.html(booksPage()));
 
-  app.get("/blog", async (c) => {
-    const posts = await listPosts(c.env.DB, { onlyPublished: true });
-    return c.html(blogListPage({ posts }));
-  });
+  for (const [section, cfg] of Object.entries(SECTIONS)) {
+    app.get(cfg.basePath, async (c) => {
+      const posts = await listPosts(c.env.DB, { onlyPublished: true, section });
+      return c.html(blogListPage({ posts, basePath: cfg.basePath, title: cfg.title, intro: cfg.intro, activeNav: cfg.activeNav }));
+    });
 
-  app.get("/blog/:slug", async (c) => {
-    const post = await getPostBySlug(c.env.DB, c.req.param("slug"), { onlyPublished: true });
-    if (!post) return c.notFound();
-    return c.html(blogPostPage({ post }));
-  });
+    app.get(`${cfg.basePath}/:slug`, async (c) => {
+      const post = await getPostBySlug(c.env.DB, c.req.param("slug"), { onlyPublished: true, section });
+      if (!post) return c.notFound();
+      return c.html(blogPostPage({ post, basePath: cfg.basePath, backLabel: cfg.backLabel, activeNav: cfg.activeNav }));
+    });
+  }
 
   // ---- Admin auth ---------------------------------------------------------
 
@@ -92,7 +96,7 @@ export function createApp() {
   });
 
   admin.get("/posts/new", (c) => {
-    const blank = { title: "", slug: "", excerpt: "", cover_image: "", source_note: "", content: "", published: true };
+    const blank = { title: "", slug: "", excerpt: "", cover_image: "", source_note: "", content: "", published: true, section: "blog" };
     return c.html(adminEditorPage({ post: blank, isNew: true }));
   });
 
@@ -103,7 +107,7 @@ export function createApp() {
       return c.html(adminEditorPage({ post, isNew: true, error: "Title and content are required." }), 400);
     }
     const slug = await createPost(c.env.DB, post);
-    return c.redirect(`/blog/${slug}`);
+    return c.redirect(`${SECTIONS[post.section].basePath}/${slug}`);
   });
 
   admin.get("/posts/:id/edit", async (c) => {
@@ -120,7 +124,7 @@ export function createApp() {
       return c.html(adminEditorPage({ post: { ...post, id }, isNew: false, error: "Title and content are required." }), 400);
     }
     const slug = await updatePost(c.env.DB, id, post);
-    return c.redirect(`/blog/${slug}`);
+    return c.redirect(`${SECTIONS[post.section].basePath}/${slug}`);
   });
 
   admin.post("/posts/:id/delete", async (c) => {
@@ -134,6 +138,7 @@ export function createApp() {
 }
 
 function postFromForm(form) {
+  const section = String(form.get("section") || "blog");
   return {
     title: String(form.get("title") || "").trim(),
     slug: String(form.get("slug") || "").trim(),
@@ -142,5 +147,6 @@ function postFromForm(form) {
     source_note: String(form.get("source_note") || "").trim(),
     content: String(form.get("content") || ""),
     published: form.get("published") === "on",
+    section: section in SECTIONS ? section : "blog",
   };
 }

@@ -2,7 +2,7 @@ import { layout } from "./layout.js";
 import { escapeHtml, renderMarkdown } from "../markdown.js";
 import { formatDate } from "../dates.js";
 
-export function blogPostPage({ post }) {
+export function blogPostPage({ post, basePath = "/blog", backLabel = "all posts", activeNav = "blog" }) {
   const cover = post.cover_image
     ? `<div class="post-hero" style="background-image:url('${escapeHtml(post.cover_image)}')"></div>`
     : "";
@@ -14,7 +14,7 @@ export function blogPostPage({ post }) {
     <h1>${escapeHtml(post.title)}</h1>
     ${post.source_note ? `<p class="source-note">${escapeHtml(post.source_note)}</p>` : ""}
     <div class="prose">${renderMarkdown(post.content)}</div>
-    <p><a href="/blog">&larr; Back to all posts</a></p>
+    <p><a href="${basePath}">&larr; Back to ${escapeHtml(backLabel)}</a></p>
   </article>
   `;
 
@@ -22,6 +22,6 @@ export function blogPostPage({ post }) {
     title: `${post.title} — Paul Kortepeter`,
     description: post.excerpt,
     body,
-    activeNav: "blog",
+    activeNav,
   });
 }

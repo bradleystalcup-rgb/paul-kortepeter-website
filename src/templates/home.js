@@ -42,10 +42,10 @@ export function homePage({ posts }) {
     <div class="wrap section about-grid">
       <div>
         <h2>About Paul</h2>
-        <p>Paul Kortepeter is an author of children&rsquo;s books, young adult fiction, and the <em>Writing &amp; Rhetoric</em> series for Classical Academic Press. His career has taken some unexpected turns: while a master&rsquo;s student at USC&rsquo;s film school, he edited a documentary about homelessness that was nominated for an Academy Award. He then spent six years in Los Angeles developing made-for-TV movies.</p>
+        <img class="about-illustration" src="/images/blizzard-ride.jpg" alt="A boy rides a dark, glowing-eyed horse through a snowstorm">
+        <p>Paul Kortepeter is the author of children&rsquo;s books, young adult fiction, and the <em>Writing &amp; Rhetoric</em> series for Classical Academic Press. His career has taken some unexpected turns: while a master&rsquo;s student at USC&rsquo;s film school, he edited a documentary about homelessness that was nominated for an Academy Award. He then spent six years in Los Angeles developing made-for-TV movies.</p>
         <p>After moving to Indiana, Paul became senior editor at Sunrise Publications, where he met Texas artist Susan Wheeler; their collaboration led to picture books published by Dutton Children&rsquo;s Books and Harvest House. He also helped found <a href="https://www.theoaksacademy.org/" target="_blank" rel="noopener">The Oaks Academy</a>, a classical school in Indianapolis that now serves 1,200 students.</p>
         <p>His work in publishing, cinema, and education has given him a particular interest in creating books that help young people see the world anew, through eyes of wonder.</p>
-        <img class="about-illustration" src="/images/blizzard-ride.jpg" alt="A boy rides a dark, glowing-eyed horse through a snowstorm">
       </div>
       <div class="work-cards">
         <a class="work-card" href="/books">

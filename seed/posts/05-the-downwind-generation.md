@@ -3,9 +3,10 @@ title: The Downwind Generation
 slug: the-downwind-generation
 excerpt: A reflection on growing up in the fallout of a culture saturated by pornography, and what families, schools, and churches can do about it.
 date: 2024-01-15
-cover_image:
+cover_image: /images/tattoo.jpg
 source_note: Blog post for adults, 2024
 published: true
+section: blog
 ---
 "Now I am become Death, the destroyer of worlds," recited nuclear physicist Robert Oppenheimer as he recalled the first atomic bomb flaming up near Socorro, New Mexico. Several observers of the explosion, comically in hindsight, wore suntan lotion and oven mitts and welding goggles. Only recently has the National Cancer Institute concluded that some of the people downwind of the explosion got cancer from the radioactive fallout. An exact number is unknown, but cancer deaths are higher for the downwinders. The desert for the Trinity test site is named the Jornada del Muerto — Dead Man's Journey. It is a parched, inhospitable scrubland rimmed by waterless mountains.
 

@@ -2,14 +2,19 @@ import { layout } from "./layout.js";
 import { escapeHtml } from "../markdown.js";
 import { formatDate } from "../dates.js";
 
+const SECTION_LABELS = { blog: "Blog", faq: "W&R FAQ" };
+const SECTION_BASE_PATHS = { blog: "/blog", faq: "/writing-rhetoric-faq" };
+
 function row(post) {
+  const basePath = SECTION_BASE_PATHS[post.section] || "/blog";
   return `
   <tr>
     <td><a href="/admin/posts/${post.id}/edit">${escapeHtml(post.title)}</a></td>
+    <td>${escapeHtml(SECTION_LABELS[post.section] || post.section)}</td>
     <td>${post.published ? '<span class="badge badge-published">Published</span>' : '<span class="badge badge-draft">Draft</span>'}</td>
     <td>${formatDate(post.created_at)}</td>
     <td class="admin-row-actions">
-      <a href="/blog/${escapeHtml(post.slug)}" target="_blank" rel="noopener">View</a>
+      <a href="${basePath}/${escapeHtml(post.slug)}" target="_blank" rel="noopener">View</a>
       <a href="/admin/posts/${post.id}/edit">Edit</a>
       <form method="post" action="/admin/posts/${post.id}/delete" onsubmit="return confirm('Delete this post? This cannot be undone.')">
         <button type="submit" class="link-button">Delete</button>
@@ -32,10 +37,10 @@ export function adminDashboardPage({ posts }) {
     </div>
     <table class="admin-table">
       <thead>
-        <tr><th>Title</th><th>Status</th><th>Date</th><th></th></tr>
+        <tr><th>Title</th><th>Section</th><th>Status</th><th>Date</th><th></th></tr>
       </thead>
       <tbody>
-        ${posts.length ? posts.map(row).join("\n") : `<tr><td colspan="4">No posts yet.</td></tr>`}
+        ${posts.length ? posts.map(row).join("\n") : `<tr><td colspan="5">No posts yet.</td></tr>`}
       </tbody>
     </table>
   </section>

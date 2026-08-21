@@ -176,11 +176,21 @@ a:hover { color: var(--gold); }
   gap: 56px;
 }
 .about-illustration {
-  width: 100%;
-  max-width: 360px;
+  float: right;
+  width: 320px;
   border-radius: var(--radius);
-  margin: 8px auto 0;
-  display: block;
+  margin: 4px 0 20px 28px;
+  box-shadow: 0 12px 28px rgba(31, 51, 80, 0.18);
+}
+
+@media (max-width: 800px) {
+  .about-illustration {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 12px auto 20px;
+  }
 }
 .work-cards { display: flex; flex-direction: column; gap: 22px; }
 .work-card {
@@ -199,9 +209,9 @@ a.work-card:hover {
 }
 .work-card-image {
   position: relative;
-  height: 130px;
+  height: 200px;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-color: var(--line);
 }
 .work-card-badge {
@@ -288,9 +298,9 @@ a.work-card:hover {
   box-shadow: 0 10px 24px rgba(31, 51, 80, 0.12);
 }
 .card-image {
-  height: 160px;
+  height: 210px;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-color: var(--line);
 }
 .card-image--blank { background: linear-gradient(135deg, var(--line), var(--cream)); }
@@ -308,9 +318,9 @@ a.work-card:hover {
 
 /* Single post */
 .post-hero {
-  height: 320px;
+  height: 360px;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
 }
 .source-note {
   font-style: italic;
@@ -360,6 +370,7 @@ a.work-card:hover {
 .stack-form .hint { font-weight: 400; color: var(--ink-soft); font-size: 0.82rem; }
 .stack-form input[type="text"],
 .stack-form input[type="password"],
+.stack-form select,
 .stack-form textarea {
   font-family: var(--font-body);
   font-size: 1rem;

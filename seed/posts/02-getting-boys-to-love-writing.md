@@ -6,6 +6,7 @@ date: 2025-10-16
 cover_image: /images/jousting-match.png
 source_note: Published in Classical Insights, October 16, 2025
 published: true
+section: blog
 ---
 When my youngest son was nine years old, his teacher gave me a call to express her concern about a particularly gory illustration from a story he was writing for a class assignment. I don't recall the offending passage apart from "the bloody swords clashed," but I do remember the picture being rife with lopped-off heads, severed arms, and a victorious knight raising his sword, gleaming with red ink. What my son saw as heroic writing, his teacher saw as the possible sign of a mental disorder. My wife and I had the obligatory conversation with the youngster, and he assured us that all the dismembered knights were bad guys.
 
