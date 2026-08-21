@@ -1,2 +1,5 @@
 /styles.css
   Cache-Control: no-cache
+
+/images/*
+  Cache-Control: no-cache
