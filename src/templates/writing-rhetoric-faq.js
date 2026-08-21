@@ -1,12 +1,13 @@
----
-title: "Writing & Rhetoric: Frequently Asked Questions"
-slug: writing-rhetoric-faq
-excerpt: Common questions about the Writing & Rhetoric series — how it works, where to start, and what makes the progymnasmata different.
-date: 2025-04-01
-cover_image: /images/writing-rhetoric-series.webp
-source_note:
-published: false
----
+import { layout } from "./layout.js";
+import { renderMarkdown } from "../markdown.js";
+
+const CONTENT = `
+Many ancient ideas are so brilliant, they persist to this day. Do you like movies? We are indebted to the ancient Greeks, who pioneered the foundational forms of drama. What about checkers or chess? You can thank the ancient Egyptians for coming up with senet, the granddaddy of all board games. And if you're grateful for indoor plumbing, we must give credit to the Romans for their aqueducts and love for public baths. The progymnasmata? This is an ancient way of learning to write that was so brilliant, it persists in every English class to this day. We just know it by other names. Fables and narrative stories? Part of the progym. Descriptive, expository, persuasive essays? Part of the progym. The five paragraph essay? Progym. Thesis statements? Progym.
+
+Our modern education has done student writers a disservice by taking what used to be a complete course in writing and speaking and fragmenting it into its component parts. Classical Academic Press's *Writing & Rhetoric* series is a reclamation of ancient wisdom, creatively designed for modern students.
+
+Progymnasmata means "preliminary exercises" in Greek — the root word for "gymnasium" is right there in the middle. Those incredibly inventive Greeks believed that their young students needed an athletic workout for writing and speaking. When the Romans conquered the Greeks, they fell in love with the progym as the best way to train young thinkers, and all of our complete progym manuscripts date back to the Roman period. The progymnasmata have persisted in various forms for twenty-five-hundred years, from their origins in 5th-century BC Greece to the present day — that's how young people in the West learned to write in Byzantium, the Middle Ages, the Renaissance, and even into early modern Europe.
+
 ## How is Writing & Rhetoric different than traditional courses in composition?
 
 Writing & Rhetoric employs the classical progymnasmata, the celebrated and intuitive approach to cultivating writing and public speaking skills. Unlike rigid, formulaic essay instruction, the "progym" prioritizes imitation, oral rhetoric, and step-by-step skill development. It weaves together the four modes of discourse — narration, exposition, description, and persuasion — highlighting their interplay in well-crafted compositions. Students begin by retelling, expanding, and analyzing excellent models, growing in confidence as they identify key patterns in foundational writing and experiment with them firsthand. Beyond mechanics, the progym nurtures moral reasoning, with each stage growing in complexity and persuasive depth, guiding young writers toward eloquence and clarity.
@@ -18,12 +19,6 @@ In the end, students will emerge as sharper thinkers and more effective writers,
 The core mission of Writing & Rhetoric, like that of the broader classical education movement, is to cultivate conscientious, principled individuals who contribute meaningfully to society. We aspire to see a growing number of virtuous writers, thinkers, and speakers who elevate culture through wisdom and eloquence.
 
 Specifically, Writing & Rhetoric prepares students for formal rhetoric — the art of persuasive writing and speaking. This includes the five canons of rhetoric (invention, arrangement, style, memory, and delivery), the three branches of oratory (legislative, judicial, and ceremonial), and the three modes of persuasion (ethos, pathos, and logos). Importantly, teachers do not need formal training in rhetoric to effectively guide students through the structured exercises of the progymnasmata, making this approach both accessible and effective.
-
-## What are the progymnasmata?
-
-The progymnasmata are preliminary writing exercises designed to train persuasive writers and speakers. The Greek word shares its root with "gymnasium" — a place of training — emphasizing its role in disciplined practice. Used as a writing manual in the West for centuries, from the Roman Empire through the Middle Ages, Renaissance, and early modern period, the progym systematically develops students' skills. It progresses from simple narratives to complex compositions and ultimately to persuasive writing.
-
-A student need not begin as a natural writer; the scaffolded structure ensures that weaker writers gain confidence and mastery, while stronger writers are challenged to refine and expand their abilities. The repetitive nature of the exercises allows all students to practice at their own pace, reinforcing key skills. In this method, repetition is not a flaw — it is an essential feature of the learning process.
 
 ## What happens at each stage?
 
@@ -70,24 +65,32 @@ For reading, second graders should independently comprehend texts at a Lexile le
 
 Each book in the Writing & Rhetoric series makes recommendations for a typical teaching week. Although the elements of grammar are important aspects of the course, its primary focus is composition. We recommend that you teach a simple, but rich, grammar curriculum in parallel with the lessons in Writing and Rhetoric. Three days a week is the recommended minimum for classroom composition.
 
-Reading offers a seamless, enjoyable path for young people to develop strong writing skills. A child's school routine should include plenty of time for both reading aloud and silent reading.
-
 ## Is it possible to complete every exercise and every section in each book?
 
-In a word, no — unless you are only tackling one book a year. Most schools and homeschools will not be able to cover every aspect of the curriculum. Rather, multiple opportunities for practice are built into the Writing & Rhetoric series. If you find that your students have mastered a particular form of writing, you should feel free to skip some lessons. In this case, teachers may choose to present the literature from skipped lessons as part of their history or English lessons. Some teachers may also provide their students with practice in summarizing, critical thinking, and sentence manipulation by doing only the Tell It Back, Talk About It, and Copiousness sections from skipped lessons.
+In a word, no — unless you are only tackling one book a year. Most schools and homeschools will not be able to cover every aspect of the curriculum. Rather, multiple opportunities for practice are built into the Writing & Rhetoric series. If you find that your students have mastered a particular form of writing, you should feel free to skip some lessons.
 
 ## If I am beginning the W&R program for students in different grade levels, what do you recommend?
 
-Older students, particularly those in fifth grade and beyond, should start at a level where they can write with confidence. For example, if they are already strong storytellers, Chreia & Proverb may be the best entry point. If they have a solid grasp of paragraphing and are ready for essay writing, Commonplace might be a better fit. As mentioned before, repetition is an intentional feature of Writing & Rhetoric, allowing older students to begin at various points without missing essential skills. However, some older students prefer to start at a more foundational level, allowing them to build on their strengths and progress quickly.
-
-## What is the purpose of the Narration (Tell It Back) and Talk About It sections of each lesson?
-
-Narration after reading helps students solidify comprehension when they retell key details in their own words, reinforcing memory and understanding. Discussion with guiding questions sparks critical thinking and encourages students to connect ideas beyond the text. Both sections promote intimacy with the ideas of the main lesson.
-
-## What is the purpose of the Sentence Play and Copiousness sections of each lesson?
-
-These sections provide students with hands-on practice in exploring the versatility of English. By rearranging sentences and devising fresh ways to express the same idea, they discover the language's dynamism, learning to mold it for clearer communication and stronger persuasion.
+Older students, particularly those in fifth grade and beyond, should start at a level where they can write with confidence. For example, if they are already strong storytellers, Chreia & Proverb may be the best entry point. If they have a solid grasp of paragraphing and are ready for essay writing, Commonplace might be a better fit. Repetition is an intentional feature of Writing & Rhetoric, allowing older students to begin at various points without missing essential skills.
 
 ## Why isn't revision included in the earliest books of Writing & Rhetoric?
 
 Revision is generally not appropriate until students have developed a foundational grasp of writing fluency and structure, typically around the fourth or fifth grade. Brain science indicates that revision enhances writing by strengthening memory and self-awareness, but only once the brain's executive function and metacognition can support the task without overloading young writers.
+`;
+
+export function writingRhetoricFaqPage() {
+  const body = `
+  <article class="wrap section narrow">
+    <h1>Writing &amp; Rhetoric: FAQs</h1>
+    <div class="prose">${renderMarkdown(CONTENT)}</div>
+    <p><a href="https://classicalacademicpress.com/pages/writing-rhetoric" target="_blank" rel="noopener">Explore the series at Classical Academic Press &rarr;</a></p>
+  </article>
+  `;
+
+  return layout({
+    title: "Writing & Rhetoric: FAQs — Paul Kortepeter",
+    description: "Common questions about the Writing & Rhetoric series and the classical progymnasmata.",
+    body,
+    activeNav: "",
+  });
+}

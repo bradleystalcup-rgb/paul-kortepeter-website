@@ -21,7 +21,7 @@ ${description ? `<meta name="description" content="${description}">` : ""}
     <nav class="site-nav">
       ${navItem("/", "Home", "home")}
       ${navItem("/blog", "Blog", "blog")}
-      ${navItem("/about", "About", "about")}
+      ${navItem("/#about", "About", "about")}
     </nav>
   </div>
 </header>
@@ -31,7 +31,7 @@ ${body}
 <footer class="site-footer">
   <div class="wrap site-footer-inner">
     <p>&copy; ${new Date().getFullYear()} Paul Kortepeter.</p>
-    <p class="site-footer-links"><a href="/blog">Blog</a> &middot; <a href="/about">About</a> &middot; <a href="/admin">Admin</a></p>
+    <p class="site-footer-links"><a href="/blog">Blog</a> &middot; <a href="/#about">About</a> &middot; <a href="/admin">Admin</a></p>
   </div>
 </footer>
 </body>

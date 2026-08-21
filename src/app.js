@@ -4,9 +4,10 @@ import { getCookie, setCookie, deleteCookie } from "hono/cookie";
 import { listPosts, getPostBySlug, getPostById, createPost, updatePost, deletePost } from "./db.js";
 import { verifyPassword, signSession, verifySession } from "./crypto.js";
 import { homePage } from "./templates/home.js";
-import { aboutPage } from "./templates/about.js";
 import { blogListPage } from "./templates/blog-list.js";
 import { blogPostPage } from "./templates/blog-post.js";
+import { writingRhetoricFaqPage } from "./templates/writing-rhetoric-faq.js";
+import { booksPage } from "./templates/books.js";
 import { adminLoginPage } from "./templates/admin-login.js";
 import { adminDashboardPage } from "./templates/admin-dashboard.js";
 import { adminEditorPage } from "./templates/admin-editor.js";
@@ -24,7 +25,11 @@ export function createApp() {
     return c.html(homePage({ posts: posts.slice(0, 3) }));
   });
 
-  app.get("/about", (c) => c.html(aboutPage()));
+  app.get("/about", (c) => c.redirect("/#about"));
+
+  app.get("/writing-rhetoric-faq", (c) => c.html(writingRhetoricFaqPage()));
+
+  app.get("/books", (c) => c.html(booksPage()));
 
   app.get("/blog", async (c) => {
     const posts = await listPosts(c.env.DB, { onlyPublished: true });

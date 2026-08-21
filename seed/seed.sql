@@ -21,7 +21,7 @@ Finally, a huge benefit of this method and curriculum is its deliberate cultivat
 
 Imagine your students crafting compelling stories, delivering persuasive speeches, and thinking critically with confidence — all the while growing in wisdom and virtue. Classical Academic Press''s *Writing & Rhetoric* series, rooted in the ancient progymnasmata, offers a proven path to these outcomes.
 
-*Renoir — The Writing Lesson (1905)*', '/images/writing-lesson-renoir.jpg', NULL, 1, '2025-07-31T12:00:00.000Z', '2025-07-31T12:00:00.000Z');
+*Renoir — The Writing Lesson (1905)*', '/images/writing-lesson-renoir.jpg', NULL, 0, '2025-07-31T12:00:00.000Z', '2025-07-31T12:00:00.000Z');
 
 INSERT INTO posts (slug, title, excerpt, content, cover_image, source_note, published, created_at, updated_at)
 VALUES ('getting-boys-to-love-writing', '"The Bloody Swords Clashed": Getting Boys to Love Writing', 'Boys and girls differ in how they respond to reading and writing — here''s how to reverse the trend and help boys embrace writing as a bold, masculine pursuit.', 'When my youngest son was nine years old, his teacher gave me a call to express her concern about a particularly gory illustration from a story he was writing for a class assignment. I don''t recall the offending passage apart from "the bloody swords clashed," but I do remember the picture being rife with lopped-off heads, severed arms, and a victorious knight raising his sword, gleaming with red ink. What my son saw as heroic writing, his teacher saw as the possible sign of a mental disorder. My wife and I had the obligatory conversation with the youngster, and he assured us that all the dismembered knights were bad guys.
@@ -288,5 +288,5 @@ These sections provide students with hands-on practice in exploring the versatil
 
 ## Why isn''t revision included in the earliest books of Writing & Rhetoric?
 
-Revision is generally not appropriate until students have developed a foundational grasp of writing fluency and structure, typically around the fourth or fifth grade. Brain science indicates that revision enhances writing by strengthening memory and self-awareness, but only once the brain''s executive function and metacognition can support the task without overloading young writers.', '/images/writing-rhetoric-series.webp', NULL, 1, '2025-04-01T12:00:00.000Z', '2025-04-01T12:00:00.000Z');
+Revision is generally not appropriate until students have developed a foundational grasp of writing fluency and structure, typically around the fourth or fifth grade. Brain science indicates that revision enhances writing by strengthening memory and self-awareness, but only once the brain''s executive function and metacognition can support the task without overloading young writers.', '/images/writing-rhetoric-series.webp', NULL, 0, '2025-04-01T12:00:00.000Z', '2025-04-01T12:00:00.000Z');
 
