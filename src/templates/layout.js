@@ -1,8 +1,3 @@
-// Bump this whenever styles.css changes — the file is served with a
-// 4-hour cache, so without a version param browsers (and Cloudflare's
-// edge) can keep serving stale CSS well after a deploy.
-const STYLES_VERSION = 1;
-
 export function layout({ title, description = "", body, activeNav = "" }) {
   const navItem = (href, label, key) =>
     `<a href="${href}" class="nav-link${activeNav === key ? " active" : ""}">${label}</a>`;
@@ -17,7 +12,7 @@ ${description ? `<meta name="description" content="${description}">` : ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=${STYLES_VERSION}">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <header class="site-header">
