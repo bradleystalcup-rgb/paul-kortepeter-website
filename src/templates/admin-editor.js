@@ -30,6 +30,9 @@ export function adminEditorPage({ post, isNew, error }) {
       <label>Cover image path <span class="hint">(e.g. /images/writing-lesson-renoir.jpg — optional)</span>
         <input type="text" name="cover_image" value="${escapeHtml(post.cover_image)}">
       </label>
+      <label>Cover image focus <span class="hint">(which part of the image to keep on crop — try "top", "center", "bottom", or a precise "30% 70%"; leave blank for the site default of "top")</span>
+        <input type="text" name="cover_focus" value="${escapeHtml(post.cover_focus)}">
+      </label>
       <label>Source note <span class="hint">(e.g. "Originally published in The American Spectator, July 2022" — optional)</span>
         <input type="text" name="source_note" value="${escapeHtml(post.source_note)}">
       </label>

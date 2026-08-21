@@ -135,17 +135,24 @@ scripts/hash-password.mjs   CLI to hash a new admin password
 ## Notes on content and images
 
 - All essays in `seed/posts/` came from the docx/pdf files in the
-  "Website blogs" folder. A couple of lines in "Hollywood Is a Horrifying
-  Hellscape" were trimmed for the web republication (a needlessly graphic
-  aside) — check against the original PDF if you want the verbatim text.
+  "Website blogs" folder. A couple of lines in "Freak Street" (originally
+  titled "Hollywood Is a Horrifying Hellscape") were trimmed for the web
+  republication (a needlessly graphic aside) — check against the original
+  PDF if you want the verbatim text.
+- Posts are split into two independent sections — `blog` (the general
+  essays, at `/blog`) and `faq` (the Writing & Rhetoric FAQ posts, at
+  `/writing-rhetoric-faq`) — set per post via the "Section" dropdown in
+  the admin editor. Each section has its own listing page and post URLs.
 - Only a handful of images from "Website Images" were copied into
   `public/images/` (the ones actually used as post covers or the homepage
   hero). The rest of that folder wasn't copied into the repo — add more via
   the admin editor's "cover image path" field once you've dropped a file into
   `public/images/`.
-- There's no photo of Paul yet — the About section is text-only. Add a
-  headshot to `public/images/` and reference it in `src/templates/about.js`
-  and `src/templates/home.js` whenever one's available.
+- Cover images default to being cropped from the top when they don't fit
+  the card's aspect ratio. If a specific image is cropping badly (e.g. a
+  portrait's face getting cut off), set "Cover image focus" in the editor
+  to something like `top`, `center`, `bottom`, or a precise `30% 70%` — it
+  maps directly to CSS `background-position` for that one image.
 - Cover images are set by typing a path (e.g. `/images/foo.jpg`) in the
   editor — there's no upload button yet. For a "very simple" CMS this keeps
   things easy to reason about; if you outgrow it, Cloudflare R2 is the

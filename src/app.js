@@ -96,7 +96,7 @@ export function createApp() {
   });
 
   admin.get("/posts/new", (c) => {
-    const blank = { title: "", slug: "", excerpt: "", cover_image: "", source_note: "", content: "", published: true, section: "blog" };
+    const blank = { title: "", slug: "", excerpt: "", cover_image: "", cover_focus: "", source_note: "", content: "", published: true, section: "blog" };
     return c.html(adminEditorPage({ post: blank, isNew: true }));
   });
 
@@ -144,6 +144,7 @@ function postFromForm(form) {
     slug: String(form.get("slug") || "").trim(),
     excerpt: String(form.get("excerpt") || "").trim(),
     cover_image: String(form.get("cover_image") || "").trim(),
+    cover_focus: String(form.get("cover_focus") || "").trim(),
     source_note: String(form.get("source_note") || "").trim(),
     content: String(form.get("content") || ""),
     published: form.get("published") === "on",

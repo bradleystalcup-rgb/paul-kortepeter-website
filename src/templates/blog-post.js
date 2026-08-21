@@ -3,8 +3,9 @@ import { escapeHtml, renderMarkdown } from "../markdown.js";
 import { formatDate } from "../dates.js";
 
 export function blogPostPage({ post, basePath = "/blog", backLabel = "all posts", activeNav = "blog" }) {
+  const focus = post.cover_focus ? `background-position:${escapeHtml(post.cover_focus)};` : "";
   const cover = post.cover_image
-    ? `<div class="post-hero" style="background-image:url('${escapeHtml(post.cover_image)}')"></div>`
+    ? `<div class="post-hero" style="background-image:url('${escapeHtml(post.cover_image)}');${focus}"></div>`
     : "";
 
   const body = `

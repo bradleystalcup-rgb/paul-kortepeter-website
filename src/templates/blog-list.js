@@ -3,8 +3,9 @@ import { escapeHtml } from "../markdown.js";
 import { formatDate } from "../dates.js";
 
 function postCard(post, basePath) {
+  const focus = post.cover_focus ? `background-position:${escapeHtml(post.cover_focus)};` : "";
   const image = post.cover_image
-    ? `<div class="card-image" style="background-image:url('${escapeHtml(post.cover_image)}')"></div>`
+    ? `<div class="card-image" style="background-image:url('${escapeHtml(post.cover_image)}');${focus}"></div>`
     : `<div class="card-image card-image--blank"></div>`;
   return `
   <a class="post-card" href="${basePath}/${escapeHtml(post.slug)}">

@@ -45,8 +45,8 @@ export async function createPost(db, post) {
   const slug = post.slug ? slugify(post.slug) : slugify(post.title);
   await db
     .prepare(
-      `INSERT INTO posts (slug, title, excerpt, content, cover_image, source_note, published, section, created_at, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+      `INSERT INTO posts (slug, title, excerpt, content, cover_image, cover_focus, source_note, published, section, created_at, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     )
     .bind(
       slug,
@@ -54,6 +54,7 @@ export async function createPost(db, post) {
       post.excerpt || "",
       post.content,
       post.cover_image || null,
+      post.cover_focus || null,
       post.source_note || null,
       post.published ? 1 : 0,
       post.section || "blog",
@@ -70,7 +71,7 @@ export async function updatePost(db, id, post) {
   await db
     .prepare(
       `UPDATE posts
-       SET slug = ?, title = ?, excerpt = ?, content = ?, cover_image = ?, source_note = ?, published = ?, section = ?, updated_at = ?
+       SET slug = ?, title = ?, excerpt = ?, content = ?, cover_image = ?, cover_focus = ?, source_note = ?, published = ?, section = ?, updated_at = ?
        WHERE id = ?`
     )
     .bind(
@@ -79,6 +80,7 @@ export async function updatePost(db, id, post) {
       post.excerpt || "",
       post.content,
       post.cover_image || null,
+      post.cover_focus || null,
       post.source_note || null,
       post.published ? 1 : 0,
       post.section || "blog",

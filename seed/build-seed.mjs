@@ -37,8 +37,8 @@ for (const file of files) {
   const published = post.published === "false" ? 0 : 1;
   const section = post.section || "blog";
 
-  sql += `INSERT INTO posts (slug, title, excerpt, content, cover_image, source_note, published, section, created_at, updated_at)\n`;
-  sql += `VALUES (${sqlString(post.slug)}, ${sqlString(post.title)}, ${sqlString(post.excerpt)}, ${sqlString(post.content)}, ${sqlString(post.cover_image)}, ${sqlString(post.source_note)}, ${published}, ${sqlString(section)}, ${sqlString(timestamp)}, ${sqlString(timestamp)});\n\n`;
+  sql += `INSERT INTO posts (slug, title, excerpt, content, cover_image, cover_focus, source_note, published, section, created_at, updated_at)\n`;
+  sql += `VALUES (${sqlString(post.slug)}, ${sqlString(post.title)}, ${sqlString(post.excerpt)}, ${sqlString(post.content)}, ${sqlString(post.cover_image)}, ${sqlString(post.cover_focus)}, ${sqlString(post.source_note)}, ${published}, ${sqlString(section)}, ${sqlString(timestamp)}, ${sqlString(timestamp)});\n\n`;
 }
 
 await writeFile(OUT_FILE, sql, "utf8");
