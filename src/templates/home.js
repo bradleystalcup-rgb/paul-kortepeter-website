@@ -38,8 +38,8 @@ export function homePage({ posts }) {
     </div>
   </section>
 
-  <section class="wrap section section-about" id="about">
-    <div class="about-grid">
+  <section class="section-about" id="about">
+    <div class="wrap section about-grid">
       <div>
         <h2>About Paul</h2>
         <p>Paul Kortepeter is an author of children&rsquo;s books, young adult fiction, and the <em>Writing &amp; Rhetoric</em> series for Classical Academic Press. His career has taken some unexpected turns: while a master&rsquo;s student at USC&rsquo;s film school, he edited a documentary about homelessness that was nominated for an Academy Award. He then spent six years in Los Angeles developing made-for-TV movies.</p>
@@ -81,13 +81,15 @@ export function homePage({ posts }) {
 
   ${FLOURISH}
 
-  <section class="wrap section section-blog">
-    <div class="section-heading">
-      <h2>Latest from the Blog</h2>
-      <a href="/blog" class="section-heading-link">View all posts &rarr;</a>
-    </div>
-    <div class="post-grid">
-      ${posts.map(postCard).join("\n")}
+  <section class="section-blog">
+    <div class="wrap section">
+      <div class="section-heading">
+        <h2>Latest from the Blog</h2>
+        <a href="/blog" class="section-heading-link">View all posts &rarr;</a>
+      </div>
+      <div class="post-grid">
+        ${posts.map(postCard).join("\n")}
+      </div>
     </div>
   </section>
   `;
