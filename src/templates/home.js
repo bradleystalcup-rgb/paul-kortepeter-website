@@ -1,6 +1,17 @@
 import { layout } from "./layout.js";
 import { escapeHtml } from "../markdown.js";
 
+const EXTERNAL_ICON = `<svg class="icon-external" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 5H5.5C4.67157 5 4 5.67157 4 6.5V14.5C4 15.3284 4.67157 16 5.5 16H13.5C14.3284 16 15 15.3284 15 14.5V11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M9 11L16 4M16 4H11.5M16 4V8.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+const FLOURISH = `
+<div class="section-divider" aria-hidden="true">
+  <svg viewBox="0 0 320 28" preserveAspectRatio="xMidYMid meet">
+    <path d="M0 14 H108 M212 14 H320" stroke="currentColor" stroke-width="1"/>
+    <path d="M108 14 C 122 4, 128 24, 138 14 C 146 6, 152 22, 160 14 C 168 22, 174 6, 182 14 C 192 24, 198 4, 212 14" stroke="currentColor" stroke-width="1.3" fill="none"/>
+    <circle cx="160" cy="14" r="2.6" fill="currentColor"/>
+  </svg>
+</div>`;
+
 function postCard(post) {
   const image = post.cover_image
     ? `<div class="card-image" style="background-image:url('${escapeHtml(post.cover_image)}')"></div>`
@@ -27,7 +38,7 @@ export function homePage({ posts }) {
     </div>
   </section>
 
-  <section class="wrap section" id="about">
+  <section class="wrap section section-about" id="about">
     <div class="about-grid">
       <div>
         <h2>About Paul</h2>
@@ -45,15 +56,16 @@ export function homePage({ posts }) {
           </div>
         </a>
         <div class="work-card">
-          <div class="work-card-image" style="background-image:url('/images/writing-rhetoric-series.webp')"></div>
+          <div class="work-card-image" style="background-image:url('/images/writing-rhetoric-series.webp')">
+            <img class="work-card-badge" src="/images/cap-logo.jpg" alt="Classical Academic Press logo">
+          </div>
           <div class="work-card-body">
             <h3>Writing &amp; Rhetoric</h3>
             <p>A creative approach to the classical Progymnasmata, published by Classical Academic Press.</p>
             <p class="work-card-links">
-              <a href="https://classicalacademicpress.com/pages/writing-rhetoric" target="_blank" rel="noopener">Explore the series &rarr;</a>
-              <a href="/writing-rhetoric-faq">W&amp;R FAQs &rarr;</a>
+              <a href="/writing-rhetoric-faq">W&amp;R FAQs</a>
+              <a href="https://classicalacademicpress.com/pages/writing-rhetoric" target="_blank" rel="noopener">Explore the series ${EXTERNAL_ICON}</a>
             </p>
-            <img class="work-card-logo" src="/images/cap-logo.jpg" alt="Classical Academic Press logo">
           </div>
         </div>
         <a class="work-card" href="mailto:paul@paulkortepeter.com">
@@ -67,7 +79,9 @@ export function homePage({ posts }) {
     </div>
   </section>
 
-  <section class="wrap section">
+  ${FLOURISH}
+
+  <section class="wrap section section-blog">
     <div class="section-heading">
       <h2>Latest from the Blog</h2>
       <a href="/blog" class="section-heading-link">View all posts &rarr;</a>

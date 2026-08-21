@@ -3,7 +3,7 @@ title: How to Conduct a Narration
 slug: how-to-conduct-a-narration
 excerpt: A practical guide to Charlotte Mason's narration method — one single reading, then the student tells it back.
 date: 2025-05-01
-cover_image:
+cover_image: /images/charlotte-mason.jpg
 source_note:
 published: true
 ---

@@ -110,7 +110,7 @@ It''s important to keep in mind that narration is not limited to read-alouds or 
 
 In addition to narrations involving the whole class, narration can be conducted in pairs or trios, in writing, by drawing, or by acting.
 
-Young children should be allowed to narrate paragraph by paragraph, while older children can "tell" chapter by chapter. Summary is more appropriate for middle and high school.', NULL, NULL, 1, '2025-05-01T12:00:00.000Z', '2025-05-01T12:00:00.000Z');
+Young children should be allowed to narrate paragraph by paragraph, while older children can "tell" chapter by chapter. Summary is more appropriate for middle and high school.', '/images/charlotte-mason.jpg', NULL, 1, '2025-05-01T12:00:00.000Z', '2025-05-01T12:00:00.000Z');
 
 INSERT INTO posts (slug, title, excerpt, content, cover_image, source_note, published, created_at, updated_at)
 VALUES ('the-downwind-generation', 'The Downwind Generation', 'A reflection on growing up in the fallout of a culture saturated by pornography, and what families, schools, and churches can do about it.', '"Now I am become Death, the destroyer of worlds," recited nuclear physicist Robert Oppenheimer as he recalled the first atomic bomb flaming up near Socorro, New Mexico. Several observers of the explosion, comically in hindsight, wore suntan lotion and oven mitts and welding goggles. Only recently has the National Cancer Institute concluded that some of the people downwind of the explosion got cancer from the radioactive fallout. An exact number is unknown, but cancer deaths are higher for the downwinders. The desert for the Trinity test site is named the Jornada del Muerto — Dead Man''s Journey. It is a parched, inhospitable scrubland rimmed by waterless mountains.
