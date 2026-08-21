@@ -4,7 +4,7 @@ slug: the-downwind-generation
 excerpt: A reflection on growing up in the fallout of a culture saturated by pornography, and what families, schools, and churches can do about it.
 date: 2024-01-15
 cover_image: /images/tattoo.jpg
-cover_focus: center
+cover_focus: center 20%
 source_note: Blog post for adults, 2024
 published: true
 section: blog
